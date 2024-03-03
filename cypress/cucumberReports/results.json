@@ -1,0 +1,160 @@
+[
+  {
+    "description": "    Check all header elements",
+    "elements": [
+      {
+        "description": "",
+        "id": "header;home-page-exists-with-heading-1",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Home page exists with heading 1",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "I open Elizabeth Theme home page on local dev",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4017000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "Validate that the heading title exists",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 33000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "Heading title is also correct",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 29000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "header;react-menu-item-exists-and-contains-correct-submenu-items",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "React menu item exists and contains correct submenu items",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "I open Elizabeth Theme home page on local dev",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3236000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "Validate that the React menu item exists",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 30000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "header;liquid-menu-item-exists-and-contains-correct-submenu-items",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "Liquid menu item exists and contains correct submenu items",
+        "steps": [],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "header;html-&-css-menu-item-exists-and-contains-correct-submenu-items",
+        "keyword": "Scenario",
+        "line": 16,
+        "name": "HTML & CSS menu item exists and contains correct submenu items",
+        "steps": [],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "header;blog-menu-item-exists",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "Blog menu item exists",
+        "steps": [],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "header;bag-icon-exists",
+        "keyword": "Scenario",
+        "line": 20,
+        "name": "Bag icon exists",
+        "steps": [],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "header;login-button-exists",
+        "keyword": "Scenario",
+        "line": 22,
+        "name": "Login button exists",
+        "steps": [],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "header;register-button-exists",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "Register button exists",
+        "steps": [],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "header",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Header",
+    "tags": [],
+    "uri": "cypress/integration/elizabeth/BDD/header.feature"
+  }
+]

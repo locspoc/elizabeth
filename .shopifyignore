@@ -6,3 +6,6 @@ cypress.config.js
 node_modules
 package.json
 package-lock.json
+README
+src
+tailwind.config.js

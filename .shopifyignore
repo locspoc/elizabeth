@@ -1,6 +1,6 @@
 cucumber-html-report.js 
 cucumber-json-formater
-cypress
+cypress/
 cypress.config.js
 .gitignore
 node_modules

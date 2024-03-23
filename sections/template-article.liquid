@@ -1,4 +1,4 @@
-<article class="py-8" itemscope itemtype="https://schema.org/BlogPosting">
+<article class="py-8" itemscope itemtype="http://schema.org/BlogPosting">
   {% for block in section.blocks %}
     {% case block.type %}
       {% when 'article_title' %}
@@ -13,7 +13,7 @@
 
       {% when 'article_author' %}
         <div class="flex items-center justify-center">
-          <div class="max-w-7xl text-center" itemscope itemtype="https://schema.org/Person">
+          <div class="max-w-7xl text-center" itemscope itemtype="http://schema.org/Person">
             {% if section.settings.enable_author %}
               <small itemprop="author">{{ article.author }}</small>
             {% endif %}
@@ -155,6 +155,33 @@
     {% endform %}
   </div>
 {% endif %}
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "type": "BlogPosting",
+    "headline": {{ article.title | json }},
+    "articleBody": {{ article.content | strip_html | json }},
+    {% if article.excerpt != blank %}
+      "description": {{ article.excerpt | strip_html | json }},
+    {% endif %}
+    {% if article.image %}
+      "image": [
+        {{ article.image | img_url: "medium" | prepend: 'https:' | json }}
+      ],
+      "datePublished": {{ article.published_at | date: format: "default" | json }},
+      "dateCreated": {{ article.created_at | date: format: "default" | json }},
+      "author": {
+        "@type": "Person",
+        "name": {{ article.author | json }}
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": {{ shop.name | json }}
+      }
+    {% endif %}
+  }
+</script>
 
 {% schema %}
 {

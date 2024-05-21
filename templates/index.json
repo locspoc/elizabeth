@@ -1,8 +1,24 @@
 {
-	"sections": {
-		"featured-collection": {
-			"type": "featured-collection"
-		}
-	},
-	"order": ["featured-collection"]
+  "sections": {
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured Collection 1",
+        "featured_collection": "",
+        "number_of_products_to_show": 12
+      }
+    },
+    "featured_collection_A4LN8N": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured Collection 2",
+        "featured_collection": "",
+        "number_of_products_to_show": 12
+      }
+    }
+  },
+  "order": [
+    "featured-collection",
+    "featured_collection_A4LN8N"
+  ]
 }

@@ -4,9 +4,18 @@
       "type": "template-page",
       "settings": {
       }
+    },
+    "featured_collection_brEk7r": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured Collection",
+        "featured_collection": "",
+        "number_of_products_to_show": 4
+      }
     }
   },
   "order": [
-    "template"
+    "template",
+    "featured_collection_brEk7r"
   ]
 }

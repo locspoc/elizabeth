@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "template": {
+      "type": "template-product",
+      "settings": {
+      }
+    },
+    "featured_collection_wKjyQh": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured Collection",
+        "featured_collection": "",
+        "number_of_products_to_show": 4
+      }
+    },
+    "contact_form_hHYKMf": {
+      "type": "contact-form",
+      "settings": {
+        "title": "Contact Us"
+      }
+    }
+  },
+  "order": [
+    "template",
+    "featured_collection_wKjyQh",
+    "contact_form_hHYKMf"
+  ]
+}

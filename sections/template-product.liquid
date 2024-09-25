@@ -96,7 +96,7 @@
 
                             <div class="my-3">
                                 {% unless product.has_only_default_variant %}
-                                    <div data-url="{{ product.url }}" data-section="{{ section.id }}">
+                                    <variant-selector data-url="{{ product.url }}" data-section="{{ section.id }}">
                                         {% for option in product.options_with_values %}
                                             <label for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
                                             <div class="my=2">
@@ -115,8 +115,13 @@
                                                     {% endfor %}
                                                 </select>
                                             </div>
+
+                                            <script type="application/json">
+                                                {{ product.variants | json }}
+                                            </script>
+
                                         {% endfor %}
-                                    </div>
+                                    </variant-selector>
                                 {% endunless %}
                             </div>
 
@@ -162,7 +167,51 @@
     </div>
 </div>
 
-<script>
+<script defer>
+
+    class VariantSelector extends HTMLElement {
+
+        constructor(){
+            super();
+            this.addEventListener("change", this.onVariantChange);
+        }
+
+        getSelectedOptions(){
+            this.options = Array.from(this.querySelectorAll('select'), (select) => select.value);
+            console.log('this.options: ', this.options);
+        }
+
+        getSelectedVariant(){
+            this.currentVariant = this.getVariantJSON().find(
+                (variant) => {
+                    const findings = !variant.options.map(
+                        (option, index) => {
+                            return this.options[index] === option;
+                        }
+                    ).includes(false);
+                    if(findings) return variant;
+                }
+            );
+            console.log('this.currentVariant: ', this.currentVariant);
+        }
+
+        onVariantChange(){
+            this.getSelectedOptions();
+            this.getSelectedVariant();
+        }
+
+        getVariantJSON(){
+            this.variantData = this.variantData || JSON.parse(this.querySelector('[type="application/json"]').textContent);
+            return this.variantData;
+        }
+
+    }
+
+    customElements.define("variant-selector", VariantSelector)
+
+</script>
+
+<script defer>
 
     const swiper = new Swiper('.mySwiper', {
 

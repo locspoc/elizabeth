@@ -1,8 +1,9 @@
 cucumber-html-report.js 
 cucumber-json-formater
-cypress
+cypress/
 cypress.config.js
 .gitignore
+.json_backup
 node_modules
 package.json
 package-lock.json

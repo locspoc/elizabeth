@@ -4,7 +4,8 @@
 	"description": "[![Generic badge](https://img.shields.io/badge/course%20available%3F-yes-green.svg)](https://shields.io/)",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"shopify:dev": "shopify theme dev --store loc-tran-digital.myshopify.com",
+		"shopify:logout": "shopify auth logout"
 	},
 	"cypress-cucumber-preprocessor": {
 		"json": {

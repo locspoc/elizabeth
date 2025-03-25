@@ -108,3 +108,4 @@ config.yml
 
 # Other
 .DS_Store
+.shopify

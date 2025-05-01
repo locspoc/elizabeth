@@ -6,6 +6,15 @@
     {% if number_of_orders > 0 %}
       <div class="w-full my-6 md:my-12">
         <h2 class="text-xl font=bold text-gray-700">Order History</h2>
+        <div>
+          {% paginate customer.orders by 10 %}
+            {% for order in customer.orders %}
+              <div class="relative">
+                {{ order.name }}
+              </div>
+            {% endfor %}
+          {% endpaginate %}
+        </div>
       </div>
     {% endif %}
   </div>

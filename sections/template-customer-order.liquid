@@ -11,6 +11,7 @@
   </div>
   <div>
     {% for line_item in order.line_items %}
+      {{ line_item.product.title }}
     {% endfor %}
   </div>
 </div>

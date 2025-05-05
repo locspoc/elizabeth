@@ -11,7 +11,10 @@
   </div>
   <div>
     {% for line_item in order.line_items %}
-      {{ line_item.product.title }}
+      <div class="w-full border border-gray-200 divide-y rounded-sm- mb-4">
+        <div class="grid grid-cols-1 mdLgrid-cols-2 lg:grid-cols-3 gap-4 lg:gap-12 p-4 md:p-12">
+        </div>
+      </div>
     {% endfor %}
   </div>
 </div>

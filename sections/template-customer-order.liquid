@@ -77,8 +77,7 @@
               target="_blank" 
               href="{{ line_item.fulfillment.tracking_url }}" 
               class="flex w-max text-sm text-white font-medium bg-gray-700 hover:bg-gray-900 px-4 py-1 rounded">
-              {% render 'icon-link' %}
-              &nbsp;Track order
+              Track order <span class="ml-1">{% render 'icon-link' %}</span>
             </a>
           {% else %}
             <p class="text-gray-500">This item is not yet fulfilled</p>

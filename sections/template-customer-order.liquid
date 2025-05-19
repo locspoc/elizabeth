@@ -94,6 +94,11 @@
     </div>
     <div>
       <h1 class="font-medium mb-4">Payment information</h1>
+      {% for transaction in order.transactions %}
+        <div class="mb-4">
+          {% assign credit_card_company = transaction.payment_details %}
+        </div>
+      {% endfor %}
     </div>
     <div></div>
   </div>

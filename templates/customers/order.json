@@ -10,7 +10,7 @@
 {
   "sections": {
     "template": {
-      "type": "template-customer-register",
+      "type": "template-customer-order",
       "settings": {}
     }
   },

@@ -182,8 +182,15 @@
                 >
                   Edit
                 </button>
-                <button class="w-full text-xs font-medium text-gray-700 border py-2">Delete</button>
+                <button 
+                  class="w-full text-xs font-medium text-gray-700 border py-2"
+                  data-url="{{ address.url }}"
+                  data-delete-address
+                >Delete</button>
               </div>
+              <form method="post" action="{{ address.url }}">
+                <input type="hidden" name="_method" value="delete">
+              </form>
             </div>
             <div
               x-show="address_{{ address.id }}"
@@ -350,6 +357,20 @@
     constructor() {
       this.initCustomiserAddress();
       this.customerAddressesSelector();
+      this.initDeleteAddressButtons();
+    }
+    initDeleteAddressButtons(){
+      const deleteButtons = document.querySelectorAll("button[data-delete-address]");
+      if(deleteButtons.length < 1) return;
+      deleteButtons.forEach(button => {
+        button.addEventListener("click", function(e){
+          const url = this.dataset.url;
+          const confirmation = window.confirm("Do you really wish to delete this address?");
+          if(confirmation){
+            document.querySelector(`form[action="${url}"]`).submit();
+          }
+        })
+      })
     }
     initCustomiserAddress() {
       const allAddressesSelector = document.querySelectorAll('select[data-country-selector]');
@@ -370,11 +391,12 @@
         }
 
         provinceSelector.innerHTML = '';
+        let options = '';
         for (var index = 0; index < arrayOfProvince.length; index++) {
           if (arrayOfProvince[index][0] === provinceSelector.getAttribute('value')) {
-            options += `<option value="${arrayOfProvince[i][0]}" selected>${arrayOfProvince[index][0]}<option>`;
+            options += `<option value="${arrayOfProvince[index][0]}" selected>${arrayOfProvince[index][0]}<option>`;
           } else {
-            options += `<option value="${arrayOfProvince[i][0]}">${arrayOfProvince[index][0]}<option>`;
+            options += `<option value="${arrayOfProvince[index][0]}">${arrayOfProvince[index][0]}<option>`;
           }
         }
         provinceSelector.innerHTML = options;

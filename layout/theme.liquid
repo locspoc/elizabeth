@@ -10,10 +10,16 @@
     {{ content_for_header }}
     <!-- Header hook for plugins -->
     {{ 'application.css' | asset_url | stylesheet_tag }}
-    {{ 'application.js' | asset_url | script_tag }}
+    {% comment %} {{ 'application.js' | asset_url | script_tag }} {% endcomment %}
+     <script src="{{ 'application.js' | asset_url }}" defer></script>
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+      [x-cloak] { display: none !important; }
+    </style>
+
   </head>
   <body>
     <main role="main">

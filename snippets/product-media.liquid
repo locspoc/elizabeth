@@ -6,9 +6,9 @@
     {% when 'video' %}
         {{ media | video_tag: controls: true, class: 'w-full h=80 object-cover' }}
     {% when 'model' %}
-        <product-modal>
+        <product-model data-media-id="{{ media.id }}">
             <div>
-                <button x-on:click="productModalOpen = true" class="w-full h-full bg-gray-100 border relative">
+                <button id="productModelOpenButton_{{ media.id }}" x-on:click="productModalOpen = true" class="w-full h-full bg-gray-100 border relative">
                     <span class="border bg-gray-100 absolute top-[50%] left-[50%] transform -translate-x[50%] -translates-y[50%]">
                         {% render 'icon-model-viewer' %}
                     </span>
@@ -20,7 +20,7 @@
                 </button>
             </div>
             <template>
-                {{ media | model_viewer_tag: revel: 'interaction' }}
+                {{ media | model_viewer_tag: reveal: 'interaction' }}
             </template>
         </product-modal>
     {% else %}

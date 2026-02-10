@@ -36,6 +36,16 @@
   <div class="max-w-6xl mx-auto my-8">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
       <div class="product--medias">
+
+        {% comment %} {% for media in product.media %}
+          <h1>media.id: {{ media.id }}</h1>
+          <h1>media.media_type: {{ media.media_type }}</h1>
+          <h1>media.preview_image: {{ media.preview_image }}</h1>
+          {% for source in media.sources %}
+            <h1>url: {{ source.url }}</h1>
+          {% endfor %}
+        {% endfor %} {% endcomment %}
+
         <div class="hidden md:block">
           {% for media in product.media %}
             <div class="h-100 overflow-hidden p-2">
@@ -189,7 +199,8 @@
             </button>
           </div>
 
-          <div id="body" class="media block relative" style="padding-top: min(calc(100vh - 5rem), 100%);"></div>
+          {% comment %} <div id="body" class="media block relative" style="padding-top: min(calc(100vh - 5rem), 100%);"></div> {% endcomment %}
+          <div id="body" class="media block relative"></div>
         </div>
       </div>
     </div>

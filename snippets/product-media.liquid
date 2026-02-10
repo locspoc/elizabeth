@@ -1,3 +1,9 @@
+{% comment %} <style>
+    #body {
+        padding-top:0 !important;
+    }
+</style> {% endcomment %}
+
 {% case media.media_type %}
     {% when 'image' %}
         <img src="{{ media | img_url: 'large' }}" alt="{{ media.preview_image.alt }}" class="w-full h-full object-cover">
@@ -22,7 +28,7 @@
             <template>
                 {{ media | model_viewer_tag: reveal: 'interaction' }}
             </template>
-        </product-modal>
+        </product-model>
     {% else %}
         {{ media | media_tag }}
         
